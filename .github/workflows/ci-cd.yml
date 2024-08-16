@@ -39,6 +39,7 @@ jobs:
 
     - name: Test Airflow DAGs
       run: |
+        docker run --rm ${{ secrets.DOCKER_USERNAME }}/airflow:${{ github.sha }} airflow db init
         docker run --rm ${{ secrets.DOCKER_USERNAME }}/airflow:${{ github.sha }} airflow dags list
         docker run --rm ${{ secrets.DOCKER_USERNAME }}/airflow:${{ github.sha }} airflow dags test example_dag 2023-01-01
 
