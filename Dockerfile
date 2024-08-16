@@ -14,6 +14,5 @@ ENV AIRFLOW__CORE__LOAD_EXAMPLES=False
 ENV AIRFLOW__CORE__EXECUTOR=LocalExecutor
 
 # Entry point for running Airflow
-CMD ["airflow", "db", "init"]
 CMD ["airflow", "webserver"]
 
